@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <head {{ if .Site.Params.opengraph }} prefix="og: http://ogp.me/ns#" {{ end }}>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
