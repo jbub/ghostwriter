@@ -42,6 +42,7 @@ disqusShortname = "XXX"
     gplus = "https://google.com/+XXX"
     twitter = "https://twitter.com/XXX"
     stackoverflow = "https://stackoverflow.com/users/XXX/YYY"
+    email = "XXX@example.com"
     opengraph = true
 
 [Permalinks]

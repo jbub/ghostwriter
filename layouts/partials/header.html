@@ -64,6 +64,11 @@
                                 <i class="fa fa-google-plus"></i>
                             </a>
                         {{ end }}
+                        {{ with .Site.Params.email }}
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:{{ . }}">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        {{ end }}
                     </div>
 
                     <ul class="site-nav">
