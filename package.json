@@ -5,6 +5,10 @@
   "repository": "git@github.com:jbub/ghostwriter.git",
   "author": "jbub <contact@jbub.eu>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --progress --colors --watch"
+  },
   "devDependencies": {
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",

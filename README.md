@@ -6,11 +6,32 @@ Enhanced port of the Ghost "[ghostwriter](https://github.com/roryg/ghostwriter)"
 
 Inside the folder of your Hugo site run:
 
-    $ mkdir themes
-    $ cd themes
-    $ git clone https://github.com/jbub/ghostwriter
+```bash
+$ mkdir themes
+$ cd themes
+$ git clone https://github.com/jbub/ghostwriter
+```
 
 For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
+
+## Development
+
+After installing the theme you need to install javascript dependencies. You can use 
+`npm` or `yarn` to install them from `package.json`. We are using `webpack` to build
+and package styles. In order to develop with realtime reloading in the browser you can 
+use this powerful combo:
+
+```bash
+hugo server
+yarn run watch
+```
+
+To update theme styles edit the `styles/style.scss` file. You can then either use the `watch` command
+or run `build` to compile the styles:
+
+```bash
+yarn run build
+```
 
 ## Example config.toml
 
