@@ -42,10 +42,8 @@ a {
 }
 
 ul, ol {
-    list-style-position: inside;
     line-height: 1.4;
     margin: 0 0 20px;
-    padding: 0;
 
     ul, ol { margin: 10px 0 0 20px; }
 
@@ -82,8 +80,13 @@ pre {
     border: 1px solid #DDDBCC;
     border-radius: 3px;
     margin: 0 0 20px;
+    overflow-x: auto;
     padding: 10px;
     font-size: 16px;
+
+    code {
+        padding: 0;
+    }
 }
 
 code {
@@ -245,6 +248,7 @@ table {
 .site-nav {
     list-style: none;
     margin: 28px 0 10px;
+    padding: 0;
 }
 
 .site-nav-item {
@@ -310,6 +314,21 @@ table {
     }
 
     &:last-child { margin-bottom: 0; }
+
+    .footnote {
+        border-spacing: 0;
+        margin-bottom: 0;
+
+        .label + td {
+            width: 100%;
+        }
+    }
+
+    .gist {
+        tr {
+            border-bottom: 0;
+        }
+    }
 }
 
 .post-footer { margin-top: 5px; }
@@ -374,6 +393,7 @@ table {
 
 .post-list {
     list-style: none;
+    padding: 0;
 }
 
 .post-stub {
@@ -519,12 +539,6 @@ table {
     .button-square:hover {
         background: #121212;
     }
-
-    .button-jump-top {
-        font-size: 23px;
-        line-height: 1.1;
-        padding-top: 1px;
-    }
 }
 
 .footer-copyright {
@@ -588,6 +602,10 @@ table {
 
         a {
             float: none;
+        }
+
+        + .button-square {
+            margin-left: 0;
         }
     }
 
@@ -662,6 +680,16 @@ table {
 
     .footer {
         margin-top: 50px;
+
+        .site-title-wrapper {
+            text-align: center;
+        }
+
+        .button-jump-top {
+            clear: both;
+            display: inline-block;
+            float: none;
+        }
     }
 }
 

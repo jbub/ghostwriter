@@ -4,4 +4,4 @@ Thumbs.db
 Desktop.ini
 
 # sass
-static/sass/.sass-cache
+node_modules/
