@@ -617,6 +617,10 @@ table {
     .post-header {
         margin-bottom: 20px;
         padding-bottom: 20px;
+        p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
     }
 
     .post-title,
@@ -625,6 +629,8 @@ table {
     .author-heading {
         font-size: 42px;
         margin-top: 5px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .post-date,
@@ -704,6 +710,8 @@ table {
     .author-heading {
         font-size: 30px;
         line-height: 1.2;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .post-date,
