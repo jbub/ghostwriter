@@ -195,7 +195,8 @@ table tr { border-bottom: 1px dotted #aeadad; }
  .site-title + .button-square { margin-left: 0; }
  .site-nav-item { display: block; margin: 15px 0; }
  .post-header { margin-bottom: 20px; padding-bottom: 20px; }
- .post-title, .page-title, .author-name, .author-heading { font-size: 42px; margin-top: 5px; }
+ .post-header p { word-wrap: break-word; overflow-wrap: break-word; }
+ .post-title, .page-title, .author-name, .author-heading { font-size: 42px; margin-top: 5px; word-wrap: break-word; overflow-wrap: break-word; }
  .post-date, .blog-description, .author-meta { margin-top: 20px; }
  .post-date:after, .post-date:before, .blog-description:after,
  .blog-description:before, .author-meta:after, .author-meta:before { margin-top: 30px; }
@@ -214,7 +215,7 @@ table tr { border-bottom: 1px dotted #aeadad; }
 }
 @media only screen and (max-width: 400px) {
  .site-header { padding-top: 40px; }
- .post-title, .page-title, .author-name, .author-heading { font-size: 30px; line-height: 1.2; }
+ .post-title, .page-title, .author-name, .author-heading { font-size: 30px; line-height: 1.2; word-wrap: break-word; overflow-wrap: break-word; }
  .post-date, .blog-description, .author-meta { line-height: 1.6; }
  .post-date, .blog-description, .author-meta { margin-top: 10px; }
  .post-date:after, .post-date:before, .blog-description:after,
