@@ -3,8 +3,9 @@
         <p class="post-tags">
             <span>Tagged:</span>
             {{ $len := len .Params.tags }}
+            {{ $baseurl := trim .Site.BaseURL "/" }}
             {{ range $index, $tag := .Params.tags }}
-                <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+                <a href="{{ $baseurl }}/tags/{{ . | urlize }}/">{{ . }}</a>
                 {{- if lt $index (sub $len 1) -}}, {{ end }}
             {{ end }}
         </p>
