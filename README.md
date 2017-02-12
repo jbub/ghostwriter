@@ -68,6 +68,7 @@ disqusShortname = "XXX"
     shareTwitter = true
     shareFacebook = true
     shareGooglePlus = true
+    shareLinkedIn = true
     dateFormat = "Mon, Jan 2, 2006"
 
 [Permalinks]
