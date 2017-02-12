@@ -34,5 +34,12 @@
                 <span class="hidden">Google+</span>
             </a>
         {{ end }}
+        {{ if .Site.Params.shareLinkedIn }}
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title={{ .Title }}&url={{ .Permalink }}&summary={{ .Description }}"
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;">
+               <i class="fa fa-linkedin"></i>
+               <span class="hidden">LinkedIn</span>
+            </a>
+        {{ end }}
     </div>
 </footer>
