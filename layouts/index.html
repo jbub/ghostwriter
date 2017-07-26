@@ -1,12 +1,7 @@
 {{ partial "header.html" . }}
 
 <div id="post-index" class="container" itemscope="" itemtype="https://schema.org/Blog">
-    {{ if .Site.Params.intro }}
-        <header class="post-header">
-            <h1 class="post-title" itemprop="name">{{ .Site.Params.headline }}</h1>
-            <p>{{ .Site.Params.description }}</p>
-        </header>
-    {{ end }}
+    {{ partial "intro.html" . }}
 
     <ol class="post-list">
         {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
