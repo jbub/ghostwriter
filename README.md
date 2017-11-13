@@ -96,3 +96,6 @@ disqusShortname = "XXX"
     url = "/page/about/"
     weight = 4
 ```
+
+You can also inject arbitrary HTML into `<head>` simply by overriding the `extra-in-head.html`
+partial, which is meant for that purpose.
