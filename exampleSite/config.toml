@@ -9,6 +9,8 @@ googleAnalytics = "XXX"
 [Author]
     name = "My Name"
     profile = "https://google.com/+XXX"
+    email = "XXX@example.com"
+    nick = "my-name"
 
 [Taxonomies]
     tag = "tags"
