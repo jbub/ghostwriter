@@ -11,13 +11,20 @@
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {{ if .Site.Params.opengraph }}{{ partial "opengraph.html" . }}{{ end }}
-        {{ with .Site.Params.webmentionEndpoint }}<link rel="webmention" href="{{ . }}" /> {{ end }}
-        <link rel="stylesheet" href="{{ .Site.BaseURL }}dist/styles.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         {{ if .RSSLink }}
-            <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml">
-        {{ end }}
+			<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+		  	<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+		{{ end }}
+        <link rel="shortcut icon" href="/img/favicon.ico" />
+        {{ with .Site.Params.microblog }} <link rel="me" href="{{ . }}" /> {{ end }}
+        {{ with .Site.Params.webmentionEndpoint }}<link rel="webmention" href="{{ . }}" /> {{ end }}
+		{{ with .Site.Params.pingbackEndpoint }}<link rel="pingback" href="{{ . }}" /> {{ end }}
+		<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+		<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+		{{ with .Site.Params.micropubEndpoint }}<link rel="micropub" href="{{ . }}">{{ end }}
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         {{ partial "extra-in-head.html" . }}
     </head>
     <body>
@@ -36,39 +43,43 @@
                                 <a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
                             </h1>
                         {{ end }}
-                        <a class="button-square" href="{{ .Site.BaseURL }}index.xml"><i class="fa fa-rss"></i></a>
+                        {{ with .Site.Params.feedurl }}
+                        	<a class="button-square" href="{{ . }}" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i></a>
+                        {{ else }}
+                        	<a class="button-square" href="{{ .Site.BaseURL }}index.xml"><i class="fa fa-rss"></i></a>
+                        {{ end }}
                         {{ with .Site.Params.twitter }}
-                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="{{ . }}" rel="me">
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="{{ . }}"  target="_blank" rel="me">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.gitlab }}
-                            <a class="button-square button-social hint--top" data-hint="Gitlab" title="Gitlab" href="{{ . }}" rel="me">
+                            <a class="button-square button-social hint--top" data-hint="Gitlab" title="Gitlab" href="{{ . }}"  target="_blank" rel="me">
                                 <i class="fa fa-gitlab"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.github }}
-                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="{{ . }}" rel="me">
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="{{ . }}"  target="_blank" rel="me">
                                 <i class="fa fa-github-alt"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.stackoverflow }}
-                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="{{ . }}" rel="me">
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="{{ . }}"  target="_blank" rel="me">
                                 <i class="fa fa-stack-overflow"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.linkedin }}
-                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="{{ . }}" rel="me">
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="{{ . }}"  target="_blank" rel="me">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.gplus }}
-                            <a class="button-square button-social hint--top" data-hint="Google+" title="Google+" href="{{ . }}" rel="me">
+                            <a class="button-square button-social hint--top" data-hint="Google+" title="Google+" href="{{ . }}"  target="_blank" rel="me">
                                 <i class="fa fa-google-plus"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.email }}
-                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:{{ . }}" rel="me">
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:{{ . }}"  target="_blank" rel="me">
                                 <i class="fa fa-envelope"></i>
                             </a>
                         {{ end }}

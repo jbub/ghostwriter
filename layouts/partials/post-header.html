@@ -1,17 +1,30 @@
 <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ .Title }}</h1>
+	{{ if .Params.refs }}
+	    <a href="{{ .Params.refs }}" {{ if .Params.refs }} style="color:#E24E42;" {{end}} target="_blank"> 
+	    	<h1 class="link-title p-name" itemprop="name headline">
+	    		{{ .Title }} 
+	    		<span class="icn">→</span>
+	    	</h1></a>
+	{{ else }}
+			<h1 class="post-title p-name" itemprop="name headline">{{ .Title }}</h1>
+	{{ end }}
     {{ if .Description }}
         <p class="post-description" itemprop="description">{{ .Description }}</p>
+    {{ else }}
+    	{{ if not .Params.refs }}
+    		<p class="post-description" itemprop="description">
+    			{{ if in .Params.tags "fiction" }} A Short Story {{end}} 
+		    	by <span class="p-author h-card">{{ .Params.author | default .Site.Author.name }}</span>
+		    </p>
+	    {{ end }}
     {{ end }}
     <p class="post-date">
-        <span>Published <a class="u-url" href="{{ .Permalink }}"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time></a></span>
-        <span>by</span>
-        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
-            <span itemprop="name">
-                <a href="{{ .Params.profile | default .Site.Author.profile | default "#" }}" itemprop="url" rel="author">
-                	<span class="p-author h-card">{{ .Params.author | default .Site.Author.name }}</span>
-                </a>
-            </span>
+        <span>
+        	<a class="u-url" href="{{ .Permalink }}">
+        	<time class="dt-published" datetime="{{ dateFormat "02 Jan 06 15:04 MST" .Date.UTC }}" itemprop="datePublished">
+        		{{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date.UTC }}
+        	</time> </a>
         </span>
+        <span>・ {{ .ReadingTime }} minutes read</span>
     </p>
 </header>

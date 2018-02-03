@@ -4,4 +4,9 @@
     {{ end }}
 
     {{ .Content }}
+    
+    {{with .Params.imgsrc }}
+        <a href="{{ . }}" class="image-credit">Image Credit</a>
+    {{ end }}  
+
 </div>

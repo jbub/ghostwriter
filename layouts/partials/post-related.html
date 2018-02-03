@@ -1,0 +1,17 @@
+<p style="align: center; content: none; margin : 10px auto 0; width: 200px; border-bottom: 1px dotted !important;"/>
+<header class="post-header"></header>
+<h1 style = "margin: 20px 0 5px 0; color: #0366d6;" class="post-description" itemprop="description">Another Post for You </h1>
+{{$posts := where ($.Site.GetPage "section" "post").Pages "UniqueID" "!= " .UniqueID }}
+{{ range (shuffle $posts | first 1) }}
+	<div class="post-stub">
+		<a href="{{ .Permalink }}" style= "color: #424242; text-decoration:none" itemprop="url" title="Go to post detail">
+			<h2 class="post-stub-title" itemprop="name headline">{{ .Title }}</h2>
+			<time style="color: #424242;" class="post-stub-date" datetime="{{ .Date.Format "2006-01-02" }}"> {{ dateFormat ("Jan 2") .Date }}</time>
+			<span style="color: #424242;">・ {{ .ReadingTime }} mins</span>
+			{{ if .Params.refs }} <span class="icn">→</span> {{end}}
+			<p class= "post-summary">{{ .Summary }}..
+				<span style= "color: #0366d6;"> [cont.]</span> 
+			</p>
+		</a>
+	</div>	
+{{ end }}
