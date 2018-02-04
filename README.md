@@ -121,3 +121,7 @@ You can also inject arbitrary HTML into `<head>` simply by overriding the `extra
 partial, which is meant for that purpose.
 
 The theme is enabled with [IndieWeb](https://indieweb.org) support which can be validated via different tools at website [IndieWebify.me](https://indiewebify.me/).
+
+### Screenshot
+
+![Ghostwriter Theme Home Page](https://github.com/am1t/ghostwriter/blob/master/screenshot.png?raw=true)
