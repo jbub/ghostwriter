@@ -1,0 +1,8 @@
+{{ if and (gt .WordCount 300 ) (.Params.toc) }}
+<aside>
+    <header>
+    <h2>On this page</h2>
+    </header>
+    {{.TableOfContents}}
+</aside>
+{{ end }}

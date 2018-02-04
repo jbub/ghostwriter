@@ -13,6 +13,8 @@ categories = [
     "golang",
 ]
 menu = "main"
+refs = "https://gohugo.io/getting-started/quick-start/"
+imgsrc = "https://gohugo.io/getting-started/quick-start/"
 +++
 
 ## Step 1. Install Hugo

@@ -2,25 +2,26 @@
 // ============================================================ //
 // ============================================================ //
 
-$primary: #F03838;
-$secondary: #303030;
+$primary: #0366d6;
+$secondary: #E24E42;
 $background: #FEFEFE;
 
 /* ============================================================ */
 /* Base */
 /* ============================================================ */
 
-html, body { height: 100%; }
+html, body { height: 100%; border-top: 3px solid #24292e;}
+
 
 body {
     background: $background;
-    color: #424242;
-    font-family: "Open Sans", arial, sans-serif;
+    color: #222222;
+    font-family: "Libre Franklin", arial, sans-serif;
     font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 20px;
+    margin: 40px 0 20px;
     text-transform: none;
 }
 
@@ -33,39 +34,66 @@ h6 { font-size: 14px; margin-bottom: 12px; }
 
 p {
     line-height: 1.8;
-    margin: 0 0 30px;
+    margin: 0 0 20px;
 }
 
 a {
     color: $primary;
     text-decoration: none;
+    
+    &:hover { color: $secondary; text-decoration: underline;}
 }
 
 ul, ol {
-    line-height: 1.4;
+    line-height: 1.6;
     margin: 0 0 20px;
 
     ul, ol { margin: 10px 0 0 20px; }
 
     li {
-        margin: 0 0 2px;
+        margin: 10px;
 
         &:last-of-type { margin-bottom: 0; }
     }
 }
 
 blockquote {
-    border-left: 1px dotted $primary;
-    margin: 40px 0;
-    padding: 5px 30px;
+    border-left: 3px solid $primary;
+    margin: 0 20px 20px 20px;
+    padding: 2px 0 2px 10px;
 
     p {
-        color: #AEADAD;
+        color: #666;
         display: block;
-        font-style: italic;
-        margin: 0;
+        margin: 0 0 20px 0;
         width: 100%;
+        
+        &:last-of-type { margin-bottom: 0; }
     }
+}
+
+aside {
+	border-left: 2px solid $secondary;
+	display: inline;
+	top: 350px;
+	right: 0;
+	padding: 0;
+	position: fixed;
+	float: right;
+	width: 220px;
+	
+	h2 {
+		margin: 5px;
+		font-size: 16px;
+	}
+	
+	a, ul, li {
+		margin-right: 5px;
+		font-size: 14px;
+		
+		&:last-of-type { margin-bottom: 10px; }
+	}
+	
 }
 
 img {
@@ -133,7 +161,7 @@ table {
 
     td { padding: 10px; }
 
-    tr { border-bottom: 1px dotted #AEADAD; }
+    tr { border-bottom: 1px dotted #666; }
 }
 
 ::selection {
@@ -164,6 +192,16 @@ table {
     }
 }
 
+.icn{
+	color: #AEADAD;
+}
+
+.doticn{
+	display:none;
+	color: #AEADAD;
+}
+
+
 /* ============================================================ */
 /* General Appearance */
 /* ============================================================ */
@@ -190,7 +228,7 @@ table {
 }
 
 .button {
-    background: $secondary;
+    background: $primary;
     border: none;
     border-radius: 3px;
     color: #FEFEFE;
@@ -199,7 +237,7 @@ table {
     padding: 10px 12px;
     text-transform: uppercase;
 
-    &:hover { background: $primary; }
+    &:hover { background: $secondary; }
 }
 
 .button-square {
@@ -210,11 +248,12 @@ table {
     margin: 0 0 0 10px;
     padding: 3px 8px 4px;
 
-    &:hover { background: $secondary; }
+    &:hover { background: $secondary; color: #FFF;}
 }
 
 .error {
     text-align: center;
+    margin: 10px;
 }
 
 .comments {
@@ -240,7 +279,7 @@ table {
 .site-title {
     float: left;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0;
     text-transform: uppercase;
 
@@ -250,7 +289,7 @@ table {
         color: #FEFEFE;
         padding: 5px 10px 6px;
 
-        &:hover { background: $secondary; }
+        &:hover { background: $secondary; text-decoration: none;}
     }
 }
 .site-logo {
@@ -267,11 +306,33 @@ table {
 
 .site-nav-item {
     display: inline-block;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 400;
     margin: 0 10px;
 
-    a:hover { color: #424242; }
+    a{
+    	color: $primary;
+    	&:hover { color: $secondary; text-decoration: underline;}
+    }
+}
+
+.intro-writeup {
+	margin:10px; 
+	text-transform: none;
+}
+
+.sec-break {
+	align: center; 
+	content: none; 
+	margin : 10px auto 0; 
+	width: 200px; 
+	border-bottom: 1px dotted;
+}
+
+.headshot {
+	width: 150px; 
+	height: 150px; 
+	height: auto;
 }
 
 /* ============================================================ */
@@ -283,7 +344,7 @@ table {
 .post-container { margin: 0 40px; }
 
 .post-header {
-    border-bottom: 6px solid $secondary;
+    border-bottom: 6px solid #303030;
     margin: 0 0 20px;
     padding: 0 0 20px;
     text-align: center;
@@ -292,24 +353,35 @@ table {
 
 .post-title,
 .page-title {
-    font-size: 52px;
+    font-size: 42px;
     font-weight: 700;
     margin: 15px 0;
     text-align: center;
-    text-transform: uppercase;
+}
+
+.post-subtitle {
+	 margin: 10px;
+}
+
+.link-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 15px 0;
+    text-align: center;
+    text-transform: none;
 }
 
 .page-title { margin: 15px 40px; }
 
 .post-date,
 .blog-description {
-    color: #AEADAD;
+    color: #666;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1;
     margin: 25px 0 0;
 
-    a { color: #AEADAD; }
+    a { color: #666; }
     a:hover { color: $primary; }
 
     &:after {
@@ -322,13 +394,6 @@ table {
 }
 
 .post-content {
-    a:hover {
-        border-bottom: 1px dotted $primary;
-        padding: 0 0 2px;
-    }
-
-    &:last-child { margin-bottom: 0; }
-
     .footnote {
         border-spacing: 0;
         margin-bottom: 0;
@@ -349,7 +414,7 @@ table {
 
 .post-tags,
 .share {
-    color: #AEADAD;
+    color: #666;
     font-size: 14px;
 
     span { font-weight: 600; }
@@ -359,6 +424,25 @@ table {
     float: left;
     margin: 3px 0 0;
     a:hover { color: $secondary; }
+}
+
+.post-mentions {
+	background:#fff5b8;
+	color: #666;
+    font-size: 16px;
+	
+	margin: 10px;
+	padding: 15px;
+	a:hover { color: $secondary; }
+}
+
+.post-note {
+	background:#fff5b8;
+	border-left: 2px solid $secondary;
+	padding: 10px;
+	margin-right: 5px;
+	
+	h2 { margin-top: 5px}
 }
 
 .share {
@@ -395,11 +479,18 @@ table {
     text-transform: uppercase;
 
     &:hover {
+	    color: #FEFEFE;
         background: $secondary;
     }
 }
 
 .page-number { display: none; }
+
+.image-credit {
+	font-size: 14px; 
+	color:#666; 
+	margin: 5px auto 0;
+}
 
 /* ============================================================ */
 /* Post Index */
@@ -407,12 +498,20 @@ table {
 
 .post-list {
     list-style: none;
+    margin: 5px;
     padding: 0;
+}
+
+.post-summary{
+	font-size: 18px; 
+	color:#666; 
+	line-height: 1.6; 
+	margin: 10px 0 5px;
 }
 
 .post-stub {
     border-bottom: 1px dotted $secondary;
-    margin: 0;
+    margin: 5px;
     position: relative;
 
     &:first-child { padding-top: 0; }
@@ -422,13 +521,12 @@ table {
         -moz-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;
         display: block;
-        color: #424242;
+        color: #222222;
         padding: 20px 5px;
 
         &:hover {
             background: #FCF5F5;
             color: $primary;
-            padding: 20px 12px;
 
             .post-stub-tag { background: $primary; }
         }
@@ -461,7 +559,20 @@ table {
 .post-stub-date {
     display: inline-block;
 
-    &:before { content: "/ "; }
+    &:before { content: " ~ "; }
+}
+
+.jrnl-entry-date{
+	display: inline-block;
+	color: #666; 
+	font-size:12px;
+
+    &:before { content: " ~ "; }
+    
+    a {
+        color: #666;
+        &:hover { color: $primary; }
+    }
 }
 
 .next-posts-link a,
@@ -511,7 +622,7 @@ table {
 }
 
 .author-meta {
-    color: #AEADAD;
+    color: #666;
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
@@ -526,7 +637,7 @@ table {
 
     i { margin-right: 8px; }
 
-    a { color: #AEADAD; }
+    a { color: #666; }
     a:hover { color: $primary; }
 }
 
@@ -541,7 +652,7 @@ table {
 /* ============================================================ */
 
 .footer {
-    background: $secondary;
+    background: #303030;
     color: #D3D3D3;
     height: 265px;
     margin-top: 95px;
@@ -587,6 +698,14 @@ table {
 /* Media Queries */
 /* ============================================================ */
 
+@media only screen and (min-width: 1400px) { 
+	aside { width: 320px; }
+}
+
+@media only screen and (max-width: 1250px) { 
+	aside { display: none; }
+}
+
 @media only screen and (max-width: 800px) {
     .post-stub-tag { display: none; }
 }
@@ -595,6 +714,8 @@ table {
     h1, h2 { margin-bottom: 20px; }
 
     p { margin-bottom: 20px; }
+
+	aside{ display: none; }
 
     ul, ol { margin-bottom: 20px; }
 
@@ -624,10 +745,15 @@ table {
     }
 
     .site-nav-item {
-        display: block;
-        margin: 15px 0;
+        display: none;
+        /*margin: 0;
+        font-size: 12px;*/
     }
-
+	
+	.doticn {
+		display: inline;
+	}
+	
     .post-header {
         margin-bottom: 20px;
         padding-bottom: 20px;
@@ -718,6 +844,8 @@ table {
         padding-top: 40px;
     }
 
+	aside{ display: none; }
+	
     .post-title,
     .page-title,
     .author-name,
