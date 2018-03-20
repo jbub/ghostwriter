@@ -5,6 +5,11 @@ languageCode = "en-us"
 copyright = "My Name"
 disqusShortname = "XXX"
 googleAnalytics = "XXX"
+# Use chroma for highlighting
+pygmentsUseClassic = false
+pygmentsCodeFences = true
+# monokai for example, see https://github.com/alecthomas/chroma/tree/master/styles for flavours
+pygmentsStyle = "monokai"
 
 [Author]
     name = "My Name"
@@ -30,8 +35,6 @@ googleAnalytics = "XXX"
     shareGooglePlus = true
     shareLinkedIn = false
     dateFormat = "Mon, Jan 2, 2006"
-    highlightJsUrl = ""
-    highlightJsLocalUrl = ""
 
 [Permalinks]
     post = "/:year/:month/:day/:filename/"
