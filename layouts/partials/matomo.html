@@ -1,8 +1,10 @@
 {{ $siteId := cond (isset .Site.Params "matomositeid") .Site.Params.MatomoSiteId "1" }}
+{{ $clientSideDNT := cond (isset .Site.Params "matomoclientsidednt") .Site.Params.MatomoClientSideDNT true }}
 <script type="text/javascript">
   var _paq = _paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   {{ if .Site.Params.MatomoDomainPrefixed }}_paq.push(["setDocumentTitle", document.domain + "/" + document.title]); {{ end }}
+  {{ if $clientSideDNT}} _paq.push(["setDoNotTrack", true]); {{ end }}
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
