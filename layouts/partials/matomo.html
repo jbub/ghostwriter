@@ -13,4 +13,7 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+{{ if .Site.Params.MatomoEnableFallback }}
+<noscript><p><img src="//{{.Site.Params.MatomoUrl}}/piwik.php?idsite={{ $siteId }}&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+{{ end }}
 <!-- End Matomo Code -->
