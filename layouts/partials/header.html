@@ -17,6 +17,7 @@
         {{ if .RSSLink }}
             <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml">
         {{ end }}
+        {{ if .Site.Params.MatomoUrl }}{{ partial "matomo.html" . }}{{ end }}
         {{ partial "extra-in-head.html" . }}
     </head>
     <body>
