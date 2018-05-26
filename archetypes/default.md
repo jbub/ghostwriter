@@ -1,5 +1,5 @@
 +++
-title = "{{ humanize .TranslationBaseName | title }}"
+title = "{{ humanize .Name | title }}"
 description = ""
 author = ""
 date = {{ .Date }}
