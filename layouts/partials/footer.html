@@ -17,11 +17,13 @@
     	         	   class="p-name u-url url author metatag" rel="me">
         	        	{{ .Site.Author.name }}
 	            	</a> /
-    	            <a class="p-nickname u-email email metatag" rel="me" 
-	    	            href="mailto:{{ .Site.Author.email }}">
-    	    	        {{ .Site.Author.nick }}
-        	   		</a> 
-        	   		/ Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                    {{ if and .Site.Author.email .Site.Author.nick }}
+                        <a class="p-nickname u-email email metatag" rel="me" 
+	    	                href="mailto:{{ .Site.Author.email }}">
+    	    	            {{ .Site.Author.nick }}
+                       </a> /
+                    {{ end }}
+        	   		Powered by <a href="https://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
