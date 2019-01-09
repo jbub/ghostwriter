@@ -11,5 +11,10 @@
                 <a href="{{ .Params.profile | default .Site.Author.profile | default "#" }}" itemprop="url" rel="author">{{ .Params.author | default .Site.Author.name }}</a>
             </span>
         </span>
+        {{ if .Site.Params.readingTime }}
+        <br />
+        <br />
+        <span>{{ .Site.Params.readingTimeText }} {{ .Page.ReadingTime }} min</span>
+        {{ end }}
     </p>
 </header>
