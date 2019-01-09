@@ -11,9 +11,19 @@
                         <i class="fa fa-angle-up"></i>
                     </a>
                 </div>
-
-                <p class="footer-copyright">
-                    <span>&copy; {{ .Site.LastChange.Format "2006" }} / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                
+                <p class="footer-copyright h-card vcard">
+		        	&copy; {{ .Site.LastChange.Format "2006" }} <a style="text-decoration: none" href={{ .Site.BaseURL }} 
+    	         	   class="p-name u-url url author metatag" rel="me">
+        	        	{{ .Site.Author.name }}
+	            	</a> /
+                    {{ if and .Site.Author.email .Site.Author.nick }}
+                        <a class="p-nickname u-email email metatag" rel="me" 
+	    	                href="mailto:{{ .Site.Author.email }}">
+    	    	            {{ .Site.Author.nick }}
+                       </a> /
+                    {{ end }}
+        	   		Powered by <a href="https://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>

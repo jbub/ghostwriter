@@ -113,3 +113,5 @@ disqusShortname = "XXX"
 
 You can also inject arbitrary HTML into `<head>` simply by overriding the `extra-in-head.html`
 partial, which is meant for that purpose.
+
+The theme is also enabled with [IndieWeb](https://indieweb.org) support which can be validated via different tools at website [IndieWebify.me](https://indiewebify.me/).
