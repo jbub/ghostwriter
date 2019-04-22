@@ -1,0 +1,20 @@
+<header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
+    {{ if .Description }}
+        <p class="post-description" itemprop="description">{{ .Description }}</p>
+    {{ end }}
+    <p class="post-date{{ if not .Site.Params.readingTime }} post-line{{ end }}">
+        <span>Published <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="{{ .Params.profile | default .Site.Author.profile | default "#" }}" itemprop="url" rel="author">{{ .Params.author | default .Site.Author.name }}</a>
+            </span>
+        </span>
+    </p>
+    {{ if .Site.Params.readingTime }}
+        <p class="post-reading post-line">
+            <span>{{ .Site.Params.readingTimeText }} {{ .Page.ReadingTime }} min</span>
+        </p>
+    {{ end }}
+</header>

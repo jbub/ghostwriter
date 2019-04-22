@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        {{ partial "post-header.html" . }}
+
+        {{ partial "post-content.html" . }}
+
+        {{ partial "post-footer.html" . }}
+
+        {{ partial "disqus.html" . }}
+    </article>
+</div>
+
+{{ partial "footer.html" . }}

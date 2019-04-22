@@ -1,0 +1,38 @@
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; {{ .Site.LastChange.Format "2006" }} / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="{{ .Site.BaseURL }}js/jquery-1.11.3.min.js"></script>
+        <script src="{{ .Site.BaseURL }}js/jquery.fitvids.js"></script>
+        
+        {{ if .Site.Params.highlightJsUrl }}
+            <script src="{{ .Site.Params.highlightJsUrl }}"></script>
+        {{ else if .Site.Params.highlightJsLocalUrl }}
+            <script src="{{ .Site.BaseURL }}{{ .Site.Params.highlightJsLocalUrl }}"></script>
+        {{ else }}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        {{ end }}
+        
+        <script src="{{ .Site.BaseURL }}js/scripts.js"></script>
+    </body>
+</html>

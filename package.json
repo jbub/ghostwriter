@@ -1,0 +1,24 @@
+{
+  "name": "ghostwriter",
+  "version": "1.0.0",
+  "description": "Enhanced port of the Ghost \"ghostwriter\" theme to the Hugo site generator.",
+  "repository": "git@github.com:jbub/ghostwriter.git",
+  "author": "Juraj Bubniak <juraj.bubniak@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --progress --colors --watch"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.11.0",
+    "normalize.css": "^7.0.0",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "perfectionist": "^2.4.0",
+    "postcss-discard-comments": "^2.0.4",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.12.0"
+  }
+}

@@ -1,0 +1,45 @@
+<footer class="post-footer clearfix">
+    {{ if .Params.tags }}
+        <p class="post-tags">
+            <span>Tagged:</span>
+            {{ $len := len .Params.tags }}
+            {{ range $index, $tag := .Params.tags }}
+                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+                {{- if lt $index (sub $len 1) -}}, {{ end }}
+            {{ end }}
+        </p>
+    {{ end}}
+
+    <div class="share">
+        {{ if or (not (isset .Site.Params "sharetwitter")) .Site.Params.shareTwitter }}
+            <a class="icon-twitter" href="https://twitter.com/share?text={{ .Title }}&url={{ .Permalink }}"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        {{ end }}
+
+        {{ if or (not (isset .Site.Params "sharefacebook")) .Site.Params.shareFacebook }}
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        {{ end }}
+
+        {{ if or (not (isset .Site.Params "sharegoogleplus")) .Site.Params.shareGooglePlus }}
+            <a class="icon-google-plus" href="https://plus.google.com/share?url={{ .Permalink }}"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        {{ end }}
+        {{ if .Site.Params.shareLinkedIn }}
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title={{ .Title }}&url={{ .Permalink }}&summary={{ .Description }}"
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;">
+               <i class="fa fa-linkedin"></i>
+               <span class="hidden">LinkedIn</span>
+            </a>
+        {{ end }}
+    </div>
+</footer>
