@@ -42,6 +42,11 @@
                                 <i class="fa fa-twitter"></i>
                             </a>
                         {{ end }}
+                        {{ with .Site.Params.facebook }}
+                            <a class="button-square button-social hint--top" data-hint="Facebook" title="Facebook" href="{{ . }}" rel="me">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        {{ end }}
                         {{ with .Site.Params.gitlab }}
                             <a class="button-square button-social hint--top" data-hint="Gitlab" title="Gitlab" href="{{ . }}" rel="me">
                                 <i class="fa fa-gitlab"></i>
