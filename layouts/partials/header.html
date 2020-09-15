@@ -38,7 +38,9 @@
                                 <a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
                             </h1>
                         {{ end }}
-                        <a class="button-square" href="{{ .Site.BaseURL }}index.xml"><i class="fa fa-rss"></i></a>
+                        {{ if .Site.Params.rss }}
+                            <a class="button-square" href="{{ .Site.BaseURL }}index.xml"><i class="fa fa-rss"></i></a>
+                        {{ end }}
                         {{ with .Site.Params.twitter }}
                             <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="{{ . }}" rel="me">
                                 <i class="fa fa-twitter"></i>
