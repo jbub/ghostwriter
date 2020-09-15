@@ -1,5 +1,5 @@
 <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
-    <a href="{{ .Permalink }}" itemprop="url" title="Go to post detail">
+    <a href="{{ .Permalink }}" itemprop="url">
         <h4 class="post-stub-title" itemprop="name">{{ .Title }}</h4>
         <time class="post-stub-date" datetime="{{ .Date.Format "2006-01-02" }}">Published {{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time>
         {{ with .Params.featured }}

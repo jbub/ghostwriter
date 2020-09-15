@@ -30,48 +30,48 @@
                 <div class="container">
                     <div class="site-title-wrapper">
                         {{ with .Site.Params.logo }}
-                            <a class="site-logo" title="{{ .Title }}" href="{{ .Site.BaseURL }}">
+                            <a class="site-logo" href="{{ .Site.BaseURL }}">
                                 <img src="{{ . }}" alt="{{ .Title }}" />
                             </a>
                         {{ else }}
                             <h1 class="site-title">
-                                <a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+                                <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
                             </h1>
                         {{ end }}
                         <a class="button-square" href="{{ .Site.BaseURL }}index.xml"><i class="fa fa-rss"></i></a>
                         {{ with .Site.Params.twitter }}
-                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="{{ . }}" rel="me">
-                                <i class="fa fa-twitter"></i>
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="{{ . }}" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.facebook }}
-                            <a class="button-square button-social hint--top" data-hint="Facebook" title="Facebook" href="{{ . }}" rel="me">
-                                <i class="fa fa-facebook"></i>
+                            <a class="button-square button-social hint--top" data-hint="Facebook" aria-label="Facebook" href="{{ . }}" rel="me">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.gitlab }}
-                            <a class="button-square button-social hint--top" data-hint="Gitlab" title="Gitlab" href="{{ . }}" rel="me">
-                                <i class="fa fa-gitlab"></i>
+                            <a class="button-square button-social hint--top" data-hint="Gitlab" aria-label="Gitlab" href="{{ . }}" rel="me">
+                                <i class="fa fa-gitlab" aria-hidden="true"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.github }}
-                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="{{ . }}" rel="me">
-                                <i class="fa fa-github-alt"></i>
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="{{ . }}" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.stackoverflow }}
-                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" title="Stack Overflow" href="{{ . }}" rel="me">
-                                <i class="fa fa-stack-overflow"></i>
+                            <a class="button-square button-social hint--top" data-hint="Stack Overflow" aria-label="Stack Overflow" href="{{ . }}" rel="me">
+                                <i class="fa fa-stack-overflow" aria-hidden="true"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.linkedin }}
-                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="{{ . }}" rel="me">
-                                <i class="fa fa-linkedin"></i>
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="{{ . }}" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
                             </a>
                         {{ end }}
                         {{ with .Site.Params.email }}
-                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:{{ . }}">
-                                <i class="fa fa-envelope"></i>
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:{{ . }}">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
                             </a>
                         {{ end }}
                     </div>
