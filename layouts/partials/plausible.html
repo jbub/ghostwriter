@@ -1,0 +1,3 @@
+{{ if and .Site.Params.plausibleAnalytics .Site.Params.plausibleAnalytics.domain }}
+    <script async defer data-domain="{{ .Site.Params.plausibleAnalytics.domain }}" src="https://{{ .Site.Params.plausibleAnalytics.serverURL | default "plausible.io" }}/js/plausible.js"></script>
+{{ end }}

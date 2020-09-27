@@ -102,6 +102,10 @@ params:
   readingTimeText: "Estimated reading time:"
   fathomUrl: ""
   fathomSiteId: ""
+  plausibleAnalytics:
+    domain: ""
+    # Default value is plausible.io, overwrite this if you are self-hosting or using a custom domain
+    serverURL: ""
 
 permalinks:
   post: "/:year/:month/:day/:filename/"
