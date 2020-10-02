@@ -25,12 +25,7 @@
             </a>
         {{ end }}
 
-        {{ if .Site.Params.shareGooglePlus }}
-            <a class="icon-google-plus" href="https://plus.google.com/share?url={{ .Permalink }}"
-              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" aria-label="Share on Google+">
-              <i class="fa fa-google-plus" aria-hidden="true"></i>
-            </a>
-        {{ end }}
+
         {{ if .Site.Params.shareLinkedIn }}
             <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title={{ .Title }}&url={{ .Permalink }}&summary={{ .Description }}"
                onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;" aria-label="Share on LinkedIn">
