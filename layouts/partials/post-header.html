@@ -3,7 +3,7 @@
     {{ if .Description }}
         <p class="post-description" itemprop="description">{{ .Description }}</p>
     {{ end }}
-    <p class="post-date{{ if not .Site.Params.readingTime }} post-line{{ end }}">
+    <p class="post-date{{ if not .Site.Params.readingTime }} {{ end }}">
         <span>Published <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
@@ -13,7 +13,7 @@
         </span>
     </p>
     {{ if .Site.Params.readingTime }}
-        <p class="post-reading post-line">
+        <p class="post-reading">
             <span>{{ .Site.Params.readingTimeText }} {{ .Page.ReadingTime }} min</span>
         </p>
     {{ end }}

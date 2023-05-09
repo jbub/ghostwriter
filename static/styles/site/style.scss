@@ -2,8 +2,8 @@
 // ============================================================ //
 // ============================================================ //
 
-$primary: #F03838;
-$secondary: #303030;
+$primary: #40798C;
+$secondary: #0B2027;
 $background: #FEFEFE;
 
 /* ============================================================ */
@@ -16,7 +16,7 @@ body {
     background: $background;
     color: #424242;
     font-family: "Open Sans", arial, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -99,6 +99,12 @@ pre {
 
     code {
         padding: 0;
+    }
+}
+
+.highlight {
+    code {
+        background-color: unset;
     }
 }
 
