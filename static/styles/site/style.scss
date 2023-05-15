@@ -15,7 +15,7 @@ html, body { height: 100%; }
 body {
     background: $background;
     color: #424242;
-    font-family: "Open Sans", arial, sans-serif;
+    font-family: "IBM Plex Sans", arial, sans-serif;
     font-size: 16px;
 }
 
@@ -74,6 +74,7 @@ img {
     width: auto;
     max-width: 100%;
 
+
     &[src$="align-center"] {
         margin: auto;
     }
@@ -113,6 +114,7 @@ code {
     font-size: 90%;
     border-radius: 4px;
     background-color: #f1f0ea;
+    font-family: "IBM Plex Mono";
 }
 
 hr {
