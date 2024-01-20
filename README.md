@@ -66,14 +66,13 @@ privacy:
     respectDoNotTrack: true
     useSessionStorage: false
 
-author:
-  name: My Name
-  profile: ""
-
 taxonomies:
   tag: tags
 
 params:
+  author:
+    name: My Name
+    profile: ""
   mainSections:
     - post
   intro: true
