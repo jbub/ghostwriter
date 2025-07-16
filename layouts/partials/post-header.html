@@ -8,7 +8,7 @@
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
             <span itemprop="name">
-                <a href="{{ .Params.profile | default .Site.Author.profile | default "#" }}" itemprop="url" rel="author">{{ .Params.author | default .Site.Author.name }}</a>
+                <a href="{{ .Params.profile | default .Site.Params.Author.profile | default "#" }}" itemprop="url" rel="author">{{ .Params.author | default .Site.Params.Author.name }}</a>
             </span>
         </span>
     </p>
