@@ -3,7 +3,6 @@ title: Ghostwriter example
 theme: github.com/jbub/ghostwriter
 languageCode: en-us
 copyright: My Name
-disqusShortname: XXX
 googleAnalytics: XXX
 pygmentsUseClasses: true
 pygmentsCodefences: true

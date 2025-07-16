@@ -43,7 +43,6 @@ theme: ghostwriter
 languageCode: en-us
 copyright: My Name
 googleAnalytics: XXX
-disqusShortname: XXX
 pygmentsUseClasses: true
 pygmentsCodefences: true
 
