@@ -105,7 +105,7 @@ params:
     serverURL: ""
 
 permalinks:
-  post: "/:year/:month/:day/:filename/"
+  post: "/:year/:month/:day/:contentbasename/"
 
 menu:
   main:
