@@ -31,8 +31,8 @@
                 <div class="container">
                     <div class="site-title-wrapper">
                         {{ with .Site.Params.logo }}
-                            <a class="site-logo" href="{{ .Site.BaseURL }}">
-                                <img src="{{ . }}" alt="{{ .Title }}" />
+                            <a class="site-logo" href="{{ site.BaseURL }}">
+                                <img src="{{ . }}" alt="{{ site.Title }}" />
                             </a>
                         {{ else }}
                             <h1 class="site-title">
