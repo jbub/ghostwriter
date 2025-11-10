@@ -5,3 +5,4 @@ Desktop.ini
 
 # sass
 node_modules/
+static/dist/
