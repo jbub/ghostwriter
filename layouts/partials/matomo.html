@@ -1,0 +1,21 @@
+{{ $siteId := cond (isset .Site.Params "matomositeid") .Site.Params.MatomoSiteId "1" }}
+{{ $clientSideDNT := cond (isset .Site.Params "matomoclientsidednt") .Site.Params.MatomoClientSideDNT true }}
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  {{ if .Site.Params.MatomoDomainPrefixed }}_paq.push(["setDocumentTitle", document.domain + "/" + document.title]); {{ end }}
+  {{ if $clientSideDNT}} _paq.push(["setDoNotTrack", true]); {{ end }}
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u="//{{ .Site.Params.MatomoUrl }}/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '{{ $siteId }}']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+{{ if .Site.Params.MatomoEnableFallback }}
+<noscript><p><img src="//{{.Site.Params.MatomoUrl}}/piwik.php?idsite={{ $siteId }}&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+{{ end }}
+<!-- End Matomo Code -->

@@ -18,6 +18,7 @@
         {{ if .OutputFormats.Get "RSS" }}
             <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml">
         {{ end }}
+        {{ if .Site.Params.MatomoUrl }}{{ partial "matomo.html" . }}{{ end }}
         {{ partial "extra-in-head.html" . }}
         {{ partial "exponea.html" . }}
         {{ partial "fathom.html" . }}
