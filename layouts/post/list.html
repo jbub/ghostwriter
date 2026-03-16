@@ -3,6 +3,9 @@
 <div id="post-index" class="container">
     {{ partial "intro.html" . }}
 
+    <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+    {{.Content}}
+
     <ol class="post-list">
         {{ $pag := .Paginate .Pages }}
         {{ range $pag.Pages }}
